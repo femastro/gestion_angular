@@ -2,10 +2,12 @@ import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
+    Unique,
 } from 'typeorm';
 
 
 @Entity()
+@Unique(["cod_Articulo"])
 export class neumaticos {
     
     @PrimaryGeneratedColumn()

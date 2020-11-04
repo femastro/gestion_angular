@@ -3,25 +3,24 @@ import { neumaticos } from '../entity/User';
 import { getRepository } from 'typeorm';
 
 export const getUsers = async (req:Request, res:Response): Promise<Response> => {
-    try {
-        const datos = await getRepository(neumaticos).find({ select: ['idneumaticos', 'marca', 'modelo', 'medida'] });
+    const datos = await getRepository(neumaticos).find({ select: ['idneumaticos', 'marca', 'modelo', 'medida'] });
+    if (datos) {
+        console.log(datos);
         return res.send(datos);
-    } catch (error) {
+    }else{
         return res.status(404).json({ message: 'Somenthing goes wrong!' });
     }
 };
 
 export const getUser = async (req:Request, res:Response): Promise<Response> => {
-    try {
-        const id = req.params.id;
-        const dato = await getRepository(neumaticos).findOneOrFail(id, { select: ['idneumaticos', 'marca', 'modelo', 'medida'] });
-        if (dato){
-            return res.send([dato]);
-            //return res.status(200).json({ user });
-        }
+    const id = req.params.id;
+    const dato = await getRepository(neumaticos).findOneOrFail(id, { select: ['idneumaticos', 'marca', 'modelo', 'medida'] });
+    if (dato) {
+        console.log([dato]);
+        return res.send([dato]);
+        //return res.status(200).json({ user });
+    }else{
         return res.status(404).json({ message: 'User Not Found !' });
-    } catch (error) {
-        return res.status(404).json({ message: 'Somenthing goes wrong!' });
     }
 };
 
