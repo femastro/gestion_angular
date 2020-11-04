@@ -1,8 +1,8 @@
 <h1>List</h1>
 <form [formGroup]="form" class="div">
   <input matInput type="text" formControlName="id"> &nbsp;
-  <button mat-raised-button (click)="onSearch()" color="primary" type="submit">Search</button>
-  <button mat-raised-button (click)="onReset()">Reset</button>
+  <button mat-raised-button (click)="onSearch()" color="primary" type="submit">Search</button>&nbsp;
+  <button mat-raised-button (click)="onReset()" color="secondary">Reset</button>
 </form>
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <!-- id Column -->
