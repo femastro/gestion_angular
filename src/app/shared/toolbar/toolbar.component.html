@@ -1,0 +1,29 @@
+<p>  
+    <mat-toolbar color="primary">
+        <span>{{ appName }}</span>
+        <a routerLink="/home" routerLinkActive="active">
+            <button mat-button>HOME</button>
+        </a>
+        <a *ngIf="!isLogged" routerLink="/stock" routerLinkActive="active">
+            <button mat-button>STOCK</button>
+        </a>
+        <a *ngIf="!isLogged" routerLink="/entry" routerLinkActive="active">
+            <button mat-button>ENTRADAS</button>
+        </a>
+        <a *ngIf="!isLogged" routerLink="/departures" routerLinkActive="active">
+            <button mat-button>SALIDAS</button>
+        </a>
+        
+        <span class="fill-remaining-space"></span>
+        <span class="login">
+            <a *ngIf="isLogged else showLogin" (click)="onLogout()">
+                <button mat-button>Logout</button>
+            </a>
+        </span>
+        <ng-template #showLogin>
+            <a  class="login" routerLink="/login" routerLinkActive="active">
+              <button mat-button>Login</button>
+            </a>
+        </ng-template>
+    </mat-toolbar>
+</p>
