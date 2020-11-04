@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "167.250.5.45",
+    "port": 3306,
+    "username": "brown_fer",
+    "password": "Pirulo/!",
+    "database": "brown_cueto",
+    "entities": ["dist/entity/**/*.js"],
+    "synchronize": true
+ }

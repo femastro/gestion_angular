@@ -13,8 +13,8 @@ export const getUsers = async (req:Request, res:Response): Promise<Response> => 
 
 export const getUser = async (req:Request, res:Response): Promise<Response> => {
     try {
-        const idneumaticos = req.params.idneumaticos;
-        const dato = await getRepository(neumaticos).findOneOrFail(idneumaticos, { select: ['idneumaticos', 'marca', 'modelo', 'medida'] });
+        const id = req.params.id;
+        const dato = await getRepository(neumaticos).findOneOrFail(id, { select: ['idneumaticos', 'marca', 'modelo', 'medida'] });
         if (dato){
             return res.send([dato]);
             //return res.status(200).json({ user });

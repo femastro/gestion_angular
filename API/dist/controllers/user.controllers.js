@@ -57,13 +57,13 @@ exports.getUsers = function (req, res) { return __awaiter(void 0, void 0, void 0
     });
 }); };
 exports.getUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var idneumaticos, dato, error_2;
+    var id, dato, error_2;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                idneumaticos = req.params.idneumaticos;
-                return [4 /*yield*/, typeorm_1.getRepository(User_1.neumaticos).findOneOrFail(idneumaticos, { select: ['idneumaticos', 'marca', 'modelo', 'medida'] })];
+                id = req.params.id;
+                return [4 /*yield*/, typeorm_1.getRepository(User_1.neumaticos).findOneOrFail(id, { select: ['idneumaticos', 'marca', 'modelo', 'medida'] })];
             case 1:
                 dato = _a.sent();
                 if (dato) {
