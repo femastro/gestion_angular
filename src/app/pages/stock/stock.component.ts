@@ -14,7 +14,7 @@ export class StockComponent implements AfterViewInit, OnInit {
     id : new FormControl('', Validators.required)
   });
 
-  displayedColumns: string[] = ['idneumaticos', 'marca', 'modelo', 'medida'];
+  displayedColumns: string[] = ['idneumaticos', 'cod_Articulo', 'marca', 'modelo', 'medida'];
 
   dataSource = new MatTableDataSource();
 
@@ -27,7 +27,6 @@ export class StockComponent implements AfterViewInit, OnInit {
   
   init(): void{
     this.authSvc.getAllUsers().subscribe((datos) => {
-      console.log(datos)
       this.dataSource.data = datos;      
     });
   }
@@ -39,7 +38,6 @@ export class StockComponent implements AfterViewInit, OnInit {
   onSearch(): void{
     const { id }  = this.form.value;
      this.authSvc.getUser(id).subscribe((dato) => {
-      console.log(dato);
       if(dato.message){
         window.alert("-- "+dato.message);
       }else{

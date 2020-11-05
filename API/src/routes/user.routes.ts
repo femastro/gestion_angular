@@ -3,14 +3,14 @@ import { getUsers, createUser, getUser, updateUser, deleteUser } from './../cont
 
 const router = Router();
 
-router.get('/users/', getUsers)
+router.get('/tire/', getUsers)
 
-router.get('/users/:id', getUser);
+router.get('/tire/:id', getUser);
 
-router.post('/users', createUser);
+router.post('/tire', createUser);
 
-router.put('/users/:id', updateUser);
+router.put('/tire/:id', updateUser);
 
-router.delete('/users/:id', deleteUser);
+router.delete('/tire/:id', deleteUser);
 
 export default router

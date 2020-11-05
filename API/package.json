@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run init",
     "start": "node dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\" "
+    "init": "tsc-watch --onSuccess \"node dist/index.js\" "
   },
   "keywords": [],
   "author": "",

@@ -15,13 +15,13 @@ export class AuthService {
 
   getAllUsers(): Observable<User[]>{
     return this.http
-      .get<User[]>(`${environment.API_URL}/users/`)
+      .get<User[]>(`${environment.API_URL}/tire/`)
       .pipe(catchError(this.handlerError));
   }
 
   getUser(id: number): Observable<any> {
     return this.http
-      .get<any>(`${environment.API_URL}/users/${id}`)
+      .get<any>(`${environment.API_URL}/tire/${id}`)
       .pipe(catchError(this.handlerError));
   }
 

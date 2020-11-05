@@ -39,7 +39,8 @@ var neumaticos = /** @class */ (function () {
         __metadata("design:type", String)
     ], neumaticos.prototype, "cod_Proveedor", void 0);
     neumaticos = __decorate([
-        typeorm_1.Entity()
+        typeorm_1.Entity(),
+        typeorm_1.Unique(["cod_Articulo"])
     ], neumaticos);
     return neumaticos;
 }());
