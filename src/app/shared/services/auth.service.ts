@@ -30,7 +30,7 @@ export class AuthService {
     if (error) {
       errorMessage = `Error ::: ${error.message}`;
     }
-    //////window.alert(errorMessage);   /// Devuelve un Error !
+    window.alert(errorMessage);   /// Devuelve un Error !
     return throwError(errorMessage);
   }
 

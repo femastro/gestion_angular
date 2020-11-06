@@ -1,0 +1,12 @@
+
+chunk {auth-login-login-module-ngfactory} auth-login-login-module-ngfactory.js, auth-login-login-module-ngfactory.js.map (auth-login-login-module-ngfactory) 83.3 kB  [rendered]
+chunk {main} main.js, main.js.map (main) 83.1 kB [initial] [rendered]
+chunk {pages-departures-departures-module-ngfactory} pages-departures-departures-module-ngfactory.js, pages-departures-departures-module-ngfactory.js.map (pages-departures-departures-module-ngfactory) 10.3 kB  [rendered]
+chunk {pages-entry-entry-module-ngfactory} pages-entry-entry-module-ngfactory.js, pages-entry-entry-module-ngfactory.js.map (pages-entry-entry-module-ngfactory) 9.74 kB  [rendered]
+chunk {pages-home-home-module-ngfactory} pages-home-home-module-ngfactory.js, pages-home-home-module-ngfactory.js.map (pages-home-home-module-ngfactory) 21.9 kB  [rendered]
+chunk {pages-stock-stock-module-ngfactory} pages-stock-stock-module-ngfactory.js, pages-stock-stock-module-ngfactory.js.map (pages-stock-stock-module-ngfactory) 113 kB  [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 141 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 9.34 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 168 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.88 MB [initial] [rendered]
+Date: 2020-11-06T03:03:00.872Z - Hash: 9181974ef12edf5466ce - Time: 21225ms

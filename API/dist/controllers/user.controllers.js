@@ -50,35 +50,32 @@ exports.getUsers = function (req, res) { return __awaiter(void 0, void 0, void 0
                     return [2 /*return*/, res.send(datos)];
                 }
                 else {
-                    return [2 /*return*/, res.status(404).json({ message: 'Somenthing goes wrong!' })];
+                    return [2 /*return*/, res.json({ message: 'Somenthing goes wrong!' })];
                 }
                 return [2 /*return*/];
         }
     });
 }); };
 exports.getUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, dato;
+    var id, dato, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                _a.trys.push([0, 2, , 3]);
                 id = req.params.id;
                 return [4 /*yield*/, typeorm_1.getRepository(User_1.neumaticos).findOneOrFail(id, { select: ['idneumaticos', 'cod_Articulo', 'marca', 'modelo', 'medida'] })];
             case 1:
                 dato = _a.sent();
-                if (dato) {
-                    console.log([dato]);
-                    return [2 /*return*/, res.send([dato])];
-                    //return res.status(200).json({ user });
-                }
-                else {
-                    return [2 /*return*/, res.status(404).json({ message: 'User Not Found !' })];
-                }
-                return [2 /*return*/];
+                return [2 /*return*/, res.send([dato])];
+            case 2:
+                error_1 = _a.sent();
+                return [2 /*return*/, res.json({ message: 'Data Not Found !' })];
+            case 3: return [2 /*return*/];
         }
     });
 }); };
 exports.createUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var newDato, error_1;
+    var newDato, error_2;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -87,16 +84,16 @@ exports.createUser = function (req, res) { return __awaiter(void 0, void 0, void
                 return [4 /*yield*/, typeorm_1.getRepository(User_1.neumaticos).save(newDato)];
             case 1:
                 _a.sent();
-                return [2 /*return*/, res.status(200).json({ message: 'User Created !' })];
+                return [2 /*return*/, res.json({ message: 'Article Created !' })];
             case 2:
-                error_1 = _a.sent();
-                return [2 /*return*/, res.status(404).json({ message: 'Somenthing goes wrong!, User Exist !' })];
+                error_2 = _a.sent();
+                return [2 /*return*/, res.json({ message: 'Somenthing goes wrong!, Article Exist !' })];
             case 3: return [2 /*return*/];
         }
     });
 }); };
 exports.updateUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var dato, results, error_2;
+    var dato, results, error_3;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, typeorm_1.getRepository(User_1.neumaticos).findOne(req.params.id)];
@@ -110,16 +107,16 @@ exports.updateUser = function (req, res) { return __awaiter(void 0, void 0, void
                 return [4 /*yield*/, typeorm_1.getRepository(User_1.neumaticos).save(dato)];
             case 3:
                 results = _a.sent();
-                return [2 /*return*/, res.status(200).json({ message: 'User Update !' })];
+                return [2 /*return*/, res.json({ message: 'Article Update !' })];
             case 4:
-                error_2 = _a.sent();
-                return [2 /*return*/, res.status(404).json({ message: 'Somenthing goes wrong!' })];
-            case 5: return [2 /*return*/, res.status(404).json({ message: 'User Not Found !' })];
+                error_3 = _a.sent();
+                return [2 /*return*/, res.json({ message: 'Somenthing goes wrong!' })];
+            case 5: return [2 /*return*/, res.json({ message: 'Article Not Found !' })];
         }
     });
 }); };
 exports.deleteUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var results, error_3;
+    var results, error_4;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -128,12 +125,12 @@ exports.deleteUser = function (req, res) { return __awaiter(void 0, void 0, void
             case 1:
                 results = _a.sent();
                 if (results.affected) {
-                    return [2 /*return*/, res.status(200).json({ message: 'User Deleted !' })];
+                    return [2 /*return*/, res.json({ message: 'Article Deleted !' })];
                 }
-                return [2 /*return*/, res.status(404).json({ message: 'User Not Found !' })];
+                return [2 /*return*/, res.json({ message: 'Article Not Found !' })];
             case 2:
-                error_3 = _a.sent();
-                return [2 /*return*/, res.status(404).json({ message: 'Somenthing goes wrong!' })];
+                error_4 = _a.sent();
+                return [2 /*return*/, res.json({ message: 'Somenthing goes wrong!' })];
             case 3: return [2 /*return*/];
         }
     });
