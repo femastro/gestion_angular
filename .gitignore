@@ -8,11 +8,11 @@
 /bazel-out
 
 # dependencies
-API/node_modules
+/API/node_modules
 /node_modules
 
 # dist
-API/dist
+/API/dist
 /dist
 
 # profiling files
